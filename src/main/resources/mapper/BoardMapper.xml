@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.a.aa.mapper.BoardMapper">
+        <insert id="write">
+            insert into p_board values(
+                p_board_seq.nextval,
+                #{title},
+                #{content},
+                #{writer},
+                sysdate,
+                0,
+                0,
+                0,
+                #{mbo}
+            )
+        </insert>
+
+        <select id="boardList" resultType="com.a.aa.domain.BoardListDTO">
+            select bno, title, writer, regDate, noReco, exReco, count
+            from p_board_view
+        </select>
+
+        <select id="select" resultType="com.a.aa.domain.SelectDTO">
+            select bno, title, writer, regDate, count, content, noReco, exReco
+            from p_board_view
+            where bno = #{bno}
+        </select>
+
+        <update id="count">
+            update p_board_view set count = count + 1
+            where bno = #{bno}
+        </update>
+
+        <update id="noReco">
+            update p_board_view set noReco = noReco + 1
+            where bno = #{bno}
+        </update>
+
+        <update id="exReco">
+            update p_board_view set exReco = exReco + 1
+            where bno = #{bno}
+        </update>
+
+        <delete id="delete">
+            delete from p_board_view where bno = #{bno}
+        </delete>
+
+        <update id="update">
+            update p_board_view
+            set title = #{title},
+                content = #{content},
+                writer = #{writer}
+            where bno = #{bno}
+        </update>
+</mapper>

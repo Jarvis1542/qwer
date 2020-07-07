@@ -1,0 +1,10 @@
+{{>layout/header}}
+<hr>
+{{#select}}
+    <input type="hidden" id="bno" value="{{bno}}">
+    <p> 제목 : {{title}}</p>
+    <p> 작성자 : {{writer}}&emsp13;&emsp13;&emsp13;{{regDate}}&emsp13;&emsp13;&emsp13;{{count}}&emsp13;&emsp13;&emsp13;일반 추천 : {{noReco}}&emsp13;&emsp13;&emsp13;전문가 추천 : &emsp13;&emsp13;&emsp13;{{exReco}}</p>
+     내용  <p>{{content}} </p>
+{{/select}}
+<button id="updateBtn">글수정</button><button id="cancel">취소</button><button id="reco">추천</button>
+{{>layout/footer}}

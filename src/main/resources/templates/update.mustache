@@ -1,0 +1,11 @@
+{{>layout/header}}
+{{#update}}
+<input type="hidden" id="bno" value="{{bno}}">
+제목 : <input type="text" id="title" value="{{title}}"><br>
+작성자 : <input type="text" id="writer" value="{{writer}}"><br>
+내용 : <textarea id="content">{{content}}</textarea><br>
+{{/update}}
+<button id="update">수정</button>
+<button id="delete">삭제</button>
+<button id="UpdateCancel">취소</button>
+{{>layout/footer}}
