@@ -45,4 +45,10 @@ public class IndexRestController {
         System.out.println("update restController : "+ updateDTO.toString());
         boardService.update(updateDTO);
     }
+
+    @PostMapping("/rest/reply")
+    public void reply(ReplyDTO replyDTO){
+        System.out.println("reply restController : " + replyDTO.toString());
+        boardService.reply(replyDTO);
+    }
 }

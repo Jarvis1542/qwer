@@ -71,6 +71,7 @@ public class IndexController {
         model.addAttribute("member", httpSession.getAttribute("user"));
         model.addAttribute("select", boardService.select(bno));
         boardService.count(bno);
+        model.addAttribute("replyList", boardService.replyList(bno));
         return "/select";
     }
 

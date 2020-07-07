@@ -13,4 +13,6 @@ public interface BoardMapper {
     void exReco(RecoDTO recoDTO);
     void delete(DeleteDTO deleteDTO);
     void update(UpdateDTO updateDTO);
+    void reply(ReplyDTO replyDTO);
+    ArrayList<ReplyListDTO> replyList(long bno);
 }

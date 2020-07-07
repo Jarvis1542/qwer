@@ -43,4 +43,12 @@ public class BoardService {
     public void update(UpdateDTO updateDTO){
         boardMapper.update(updateDTO);
     }
+
+    public void reply(ReplyDTO replyDTO){
+        boardMapper.reply(replyDTO);
+    }
+
+    public ArrayList<ReplyListDTO> replyList(long bno){
+        return boardMapper.replyList(bno);
+    }
 }

@@ -134,4 +134,26 @@ $(document).ready(function () {
             alert(error);
         });
     });
+
+    $('#reply').click(function () {
+        var bno = $('#bno').val();
+
+        var data = {
+            rwriter : $('#rwriter').val(),
+            rcontent : $('#rcontent').val(),
+            bno : $('#bno').val(),
+            mbo : $('#mno').val()
+        };
+
+        $.ajax({
+            type : 'post',
+            url : '/rest/reply',
+            data : data
+        }).done(function () {
+            alert('댓글달기 완료');
+            window.location.href='/select/' + bno;
+        }).fail(function (error) {
+            alert(error);
+        });
+    });
 });
